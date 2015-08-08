@@ -1,0 +1,25 @@
+{
+  "name": "sunglasses",
+  "version": "0.0.1",
+  "authors": [
+    "naora <naoric@gmail.com>"
+  ],
+  "main": "js/app.js",
+  "keywords": [
+    "sunglasses"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-latest": "~1.4.3",
+    "angular": "~1.4.3",
+    "angular-route": "~1.4.3"
+  }
+}
