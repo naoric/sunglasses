@@ -44,8 +44,10 @@ app
 	};
 
 	$scope.users = [
-		{firstName: 'oren', lastName: 'elad'},
-		{firstName: 'naor', lastName: 'ami'}
+		{firstName: 'Eli', lastName: 'Cohen', relationship: 'married', city:'Tel-Aviv'},
+		{firstName: 'Nati', lastName: 'Pezam', relationship: 'single', city:'Jerusalem'},
+		{firstName: 'Avi', lastName: 'Ben-ari', relationship: 'single', city:'Raanana'},
+		{firstName: 'Ofir', lastName: 'Stern', relationship: 'married', city:'Kiryat-Yam'}
 	];
 
 	angular.forEach($scope.users, function (user) {

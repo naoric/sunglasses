@@ -14,8 +14,10 @@
                 <li>
                     <a href="#">Filter</a>
                     <ul>
+                        <li><a href="#">First Name</a> </li>
+                        <li><a href="#">Last Name</a> </li>
                         <li><a href="#">Gender</a></li>
-                        <li><a href="#">Age</a></li>
+                        <li><a href="#">Relationship</a></li>
                         <li><a href="#">City</a></li>
                     </ul>
                 </li>
@@ -31,9 +33,8 @@
 			<div>
 				<p><span class="label">First Name:</span><span class="user-field">{{user.firstName}}</span></p> 
 				<p><span class="label">Last Name:</span><span class="user-field"></span>{{user.lastName}}</p> 
-				<p><span class="label">Gender:</span><span class="user-field"></span></p> 
-				<p><span class="label">Age:</span><span class="user-field"></span></p> 
-				<p><span class="label">City:</span><span class="user-field"></span></p> 
+				<p><span class="label">Relationship:</span><span class="user-field">{{user.relationship}}</span></p>
+				<p><span class="label">City:</span><span class="user-field"></span>{{user.city}}</p>
 			</div>			
     	</article>
 	    <div ng-if="shouldDisplayMenu" style="position:fixed; right: 0; top: 0; height: 500px; width: 300px; background: rgba(100, 100, 100, 0.5)">

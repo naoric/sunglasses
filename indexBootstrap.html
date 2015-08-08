@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Sunglasses</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="lib/bootstrap/dist/css/myStyle.css" rel="stylesheet" media="screen">
+</head>
+<body ng-app="Sunglasses">
+<div class="header">
+    <div class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <!-- My Nav Bar    ------------------------>
+            <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Friends Brands</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse navbar-ex1-collapse ">
+                    <ul class="nav navbar-nav navbar-left  "  id="menu_items">
+                        <li class="active navbar-left"><a href="#">Home</a></li>
+                        <li class="navbar-left" id="who-we-are"><a href="#">About</a></li>
+                        <li class="navbar-left">
+                            <a href="#" class="dropdown-toggle " data-toggle="dropdown">Filter by<b class="caret"></b></a>
+                            <ul class="dropdown-menu ">
+                                <li><a href="#">First Name</a> </li>
+                                <li><a href="#">Last Name</a> </li>
+                                <li><a href="#">Relationship</a></li>
+                                <li><a href="#">City</a></li>
+                            </ul>
+                        </li>
+                        <li class="navbar-left"><a href="#">My Sunglasses</a></li>
+                        <li  class="navbar-left">
+                            <a href="#" class="dropdown-toggle " data-toggle="dropdown">Help<b class="caret"></b></a>
+                            <ul class="dropdown-menu ">
+                                <li ><a href="#">Q&A</a></li>
+                                <li ><a href="#">Version 0.0.1</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+
+            </nav> <!-- End of Nav Bar    ------------------------>
+
+
+        </div>
+
+    </div>
+</div>
+<main ng-controller="UserController">
+    <article ng-repeat="user in users">
+        <figure ng-click="toggleMenu(user)">
+            <img ng-src="{{user.image}}" alt="">
+        </figure>
+        <div>
+            <p><span class="label">First Name:</span><span class="user-field">{{user.firstName}}</span></p>
+            <p><span class="label">Last Name:</span><span class="user-field"></span>{{user.lastName}}</p>
+            <p><span class="label">Relationship:</span><span class="user-field">{{user.relationship}}</span></p>
+            <p><span class="label">City:</span><span class="user-field"></span>{{user.city}}</p>
+        </div>
+    </article>
+    <div ng-if="shouldDisplayMenu" style="position:fixed; right: 0; top: 0; height: 500px; width: 300px; background: rgba(100, 100, 100, 0.5)">
+
+    </div>
+</main>
+<div ng-view></div>
+<script src="lib/angular/angular.min.js"></script>
+<script src="lib/angular-route/angular-route.min.js"></script>
+<script src="js/app.js"></script>
+</body>
+
+</html>
