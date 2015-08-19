@@ -1,4 +1,4 @@
-var app = angular.module('Sunglasses', ['ngRoute']);
+var app = angular.module('VoxpopuliAppleSimulator', ['ngRoute']);
 
 app
 
@@ -34,27 +34,43 @@ app
 	};
 }])
 
-.controller('UserController', ['$scope', 'attachImageToUser', function ($scope, attachImageToUser) {
+.controller('VoxAppSimController', ['$scope', 'attachImageToUser', function ($scope, attachImageToUser) {
 	$scope.userImage = '';
 	$scope.shouldDisplayMenu = false;
 	$scope.activeUser = {};
+	$scope.code = 'A2zALf3TpqU';
 	
 	$scope.toggleMenu = function (user) {
 		$scope.shouldDisplayMenu = !$scope.shouldDisplayMenu;
 	};
 
 	$scope.users = [
-		{firstName: 'Eli', lastName: 'Cohen', relationship: 'married', city:'Tel-Aviv'},
-		{firstName: 'Nati', lastName: 'Pezam', relationship: 'single', city:'Jerusalem'},
-		{firstName: 'Avi', lastName: 'Ben-ari', relationship: 'single', city:'Raanana'},
-		{firstName: 'Ofir', lastName: 'Stern', relationship: 'married', city:'Kiryat-Yam'}
+		{CandidateNum:1, code: 'A2zALf3TpqU', firstName: 'Arthur', lastName: 'Sabag'},
+		{CandidateNum:2, firstName: 'Alex', lastName: 'Pezam'},
+		{CandidateNum:3, firstName: 'Astrit', lastName: 'Gere'},
+		{CandidateNum:4, firstName: 'Serj', lastName: 'Widman'},
+		{CandidateNum:5, firstName: 'Lion', lastName: 'Stern'}
+
 	];
 
-	angular.forEach($scope.users, function (user) {
-		attachImageToUser(user);
-	});
-
 }])
+
+.directive('myYoutube', function($sce) {
+  return {
+    restrict: 'EA',
+    scope: { code:'=' },
+    replace: true,
+    template: '<div style="height:200px;width:300px"><iframe style="overflow:hidden;height:100%;width:100%" width="100%" height="100%" src="{{url}}" frameborder="0" allowfullscreen></iframe></div>',
+    link: function (scope) {
+        console.log('here');
+        scope.$watch('code', function (newVal) {
+           if (newVal) {
+               scope.url = $sce.trustAsResourceUrl("http://www.youtube.com/embed/" + newVal);
+           }
+        });
+    }
+  };
+})
 
 .controller('UserDetailsController', ['$scope', function($scope) {
 

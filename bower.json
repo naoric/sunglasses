@@ -2,7 +2,7 @@
   "name": "sunglasses",
   "version": "0.0.1",
   "authors": [
-    "naora <naoric@gmail.com>"
+    "naora <elador1@gmail.com>"
   ],
   "main": "js/app.js",
   "keywords": [
@@ -19,6 +19,8 @@
   ],
   "dependencies": {
     "angular": "~1.4.3",
-    "angular-route": "~1.4.3"
+    "angular-route": "~1.4.3",
+    "angular-youtube-mb": "~1.1.0",
+    "ng-videosharing-embed": "~0.3.3"
   }
 }
